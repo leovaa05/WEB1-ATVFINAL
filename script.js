@@ -1,8 +1,8 @@
 const apiKey = '481f07d4ec894d6d0fab58654528a31d';
 
+const resultsContainer = document.getElementById('results-container');
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
-const resultsContainer = document.getElementById('results-container');
 
 function buscarFilmes() {
   const query = searchInput.value.trim();
@@ -27,7 +27,7 @@ function buscarFilmes() {
 
 function mostrarResultados(movies) {
   resultsContainer.innerHTML = movies.map(movie => {
-    const poster = movie.poster_path 
+    const poster = movie.poster_path
       ? `https://image.tmdb.org/t/p/w300${movie.poster_path}` 
       : 'images/no-image.png';
 
@@ -46,6 +46,38 @@ function mostrarResultados(movies) {
     `;
   }).join('');
 }
+
+function carregarPopulares() {
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&page=1`)
+    .then(res => res.json())
+    .then(data => {
+      if(data.results && data.results.length > 0) {
+        mostrarResultados(data.results);
+      }
+    })
+    .catch(() => {
+      resultsContainer.innerHTML = `<p>Erro ao carregar filmes populares.</p>`;
+    });
+}
+
+function carregarMelhoresAvaliados() {
+  fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=pt-BR&page=1`)
+    .then(res => res.json())
+    .then(data => {
+      if(data.results && data.results.length > 0) {
+        mostrarResultados(data.results);
+      }
+    })
+    .catch(() => {
+      resultsContainer.innerHTML = `<p>Erro ao carregar filmes melhores avaliados.</p>`;
+    });
+}
+
+searchButton.addEventListener('click', buscarFilmes);
+
+window.addEventListener('load', () => {
+  carregarPopulares();
+});
 
 function adicionarFavorito(movie) {
   let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
