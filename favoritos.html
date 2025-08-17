@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineWEB - Meus Favoritos</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CineWEB - Favoritos</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
+     <header>
         <div class="header-container">
             <div class="Titulo">
-                <img src="images/logo-cine-web.png" alt="Logo" class="logo">
+                <img src="images/logo-cine-web.png" alt="Logo" class="logo" />
                 <h1>CineWEB</h1>
             </div>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Buscar filme..." />
-                <button id="search-button">Buscar</button>
-            </div>
-            
             <nav>
-            <a href="index.html">Início</a>
-            <a href="favoritos.html">Favoritos</a>
-            <a href="resenhas.html">Minhas Resenhas</a>
+                <a href="index.html">Início</a>
+                <a href="favoritos.html">Favoritos</a>
+                <a href="resenhas.html">Minhas Resenhas</a>
             </nav>
         </div>
     </header>
+
+    <main>
+        <h2>Meus Filmes Favoritos</h2>
+        <div id="favoritos-container"></div>
+    </main>
+            
+    <script src="favoritos.js"></script>
 </body>
 </html>

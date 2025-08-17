@@ -34,12 +34,39 @@ function mostrarResultados(movies) {
     const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
 
     return `
-      <div>
-        <img src="${poster}" alt="${movie.title}" width="150">
-        <h3>${movie.title} (${releaseYear})</h3>
-      </div>
+        <div class="movie-card" data-id="${movie.id}" data-title="${movie.title}" data-poster="${poster}">
+            <img src="${poster}" alt="${movie.title}" width="150">
+            <h3>${movie.title} (${releaseYear})</h3>
+        <button class="fav-btn">Favoritar</button>
+        </div>
     `;
   }).join('');
 }
 
+function adicionarFavorito(movie) {
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+  if (favoritos.find(fav => fav.id === movie.id)) {
+    alert('Filme já está nos favoritos!');
+    return;
+  }
+
+  favoritos.push(movie);
+  localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  alert(`Filme "${movie.title}" adicionado aos favoritos!`);
+}
+
 searchButton.addEventListener('click', buscarFilmes);
+
+resultsContainer.addEventListener('click', (event) => {
+  if (event.target.classList.contains('fav-btn')) {
+    const movieCard = event.target.closest('.movie-card');
+    const movie = {
+      id: movieCard.getAttribute('data-id'),
+      title: movieCard.getAttribute('data-title'),
+      poster: movieCard.getAttribute('data-poster'),
+    };
+
+    adicionarFavorito(movie);
+  }
+});
