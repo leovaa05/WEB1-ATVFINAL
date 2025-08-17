@@ -26,3 +26,41 @@ header h1 {
   font-size: 3.2rem;
   flex-shrink: 0;
 }  
+
+.search-container {
+  display: flex;
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+.search-container input[type="text"] {
+  flex-grow: 1;
+  padding: 14px 18px;
+  border: 1px solid #444;
+  border-radius: 4px 0 0 4px;
+  background-color: #222;
+  color: #eee;  
+  font-size: 1.2rem;
+  outline: none;
+  transition: border-color 0.3s ease;   
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #e67e22;
+}
+
+.search-container button {
+  padding: 8px 16px;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-weight:700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.search-container button:hover {
+  background-color: #b96215;
+}
