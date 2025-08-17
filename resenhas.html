@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CineWEB - Minhas Resenhas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <div class="header-container">
-             <div class="Titulo">
-                <img src="images/logo-cine-web.png" alt="Logo" class="logo">
-                <h1>CineWEB</h1>
-            </div>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Buscar filme..." />
-                <button id="search-button">Buscar</button>
-            </div>
-            <nav>
+        <div class="Titulo">
+            <img src="images/logo-cine-web.png" alt="Logo" class="logo" />
+            <h1>CineWEB</h1>
+        </div>
+        <nav>
             <a href="index.html">Início</a>
             <a href="favoritos.html">Favoritos</a>
             <a href="resenhas.html">Minhas Resenhas</a>
-            </nav>
-            
+        </nav>
         </div>
     </header>
+    <main>
+        <h2>Minhas Resenhas</h2>
+        <div id="resenhas-container"></div>
+    </main>
+    <script src="resenhas.js"></script>
 </body>
 </html>
