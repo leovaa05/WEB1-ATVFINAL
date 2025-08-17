@@ -137,14 +137,17 @@ function criarModalResenha(movieId, movieTitle) {
       return;
     }
 
-    salvarResenha(movieId, movieTitle, nota, textoResenha);
+    const movieCard = document.querySelector(`.movie-card[data-id="${movieId}"]`);
+    const poster = movieCard ? movieCard.querySelector('img').src : 'images/no-image.png';
+
+    salvarResenha(movieId, movieTitle, nota, textoResenha, poster);
 
     alert('Resenha enviada com sucesso!');
     body.removeChild(modalBg);
   });
 }
 
-function salvarResenha(id, title, nota, texto) {
+function salvarResenha(id, title, nota, texto, poster) {
   let resenhas = JSON.parse(localStorage.getItem('resenhas')) || [];
   
   resenhas.push({
@@ -152,6 +155,7 @@ function salvarResenha(id, title, nota, texto) {
     title,
     nota,
     texto,
+    poster,
     data: new Date().toISOString()
   });
 
