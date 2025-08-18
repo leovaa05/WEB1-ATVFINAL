@@ -39,8 +39,14 @@ Escolhemos esse tema porque o cinema é algo muito popular e quisemos criar uma 
     - Implementar paginação e mais filtros de busca (por gênero, ano, etc.).
     - Criar uma versão mobile-first mais otimizada.
     - Possibilitar que resenhas sejam editadas após criadas.
-
-# 4. Prints com resultados:
+      
+# 4. Créditos:
+- API Utilizada - TheMovieDB (https://www.themoviedb.org)
+- Material de Apoio - Notion Arthur Porto (https://arthurporto.notion.site)
+- Material de Apoio - The Modern JavaScript Tutorial (https://javascript.info)
+- Auxílio no Desenvolvimento - ChatGPT (https://chatgpt.com)
+  
+# 5. Prints com resultados:
 ## Página Inicial do Site
 ![Página Inicial](prints/paginainicial.png)
 ## Página de Favoritos do Site
