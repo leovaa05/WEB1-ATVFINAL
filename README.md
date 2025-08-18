@@ -1,6 +1,6 @@
 # CineWeb
- ## Autores: Erick Douglas, Kayo Rodrigues e Leonardo Viana
- ## Este projeto tem como objetivo utilizar os conhecimentos adquiridos na matéria de Desenvolvimento Web I, com html, css e js com api.
+## Este projeto tem como objetivo utilizar os conhecimentos adquiridos na matéria de Desenvolvimento Web I, com html, css e js com api.
+### Autores: Erick Douglas, Kayo Rodrigues e Leonardo Viana
 
 ## 1. Descrição do Objetivo
 A proposta desse trabalho foi desenvolver uma aplicação interativa que consome dados reais da API do TMDB.
